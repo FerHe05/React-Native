@@ -1,9 +1,9 @@
 import React from "react"
 import{ View,Text, StyleSheet } from 'react-native'
 import Mensagem from './components/Primeiro'//importa a msg
-
-
+import MinMax from "./components/MinMax"
 import CompPadrao, {Comp1,Comp2}from './components/Multi'
+import Aleatorio from "./components/Aleatorio"
 
 
 /*
@@ -17,10 +17,16 @@ export default App
 export default () => (
 
     <View style={style.App}>
-        <Mensagem></Mensagem>
-        <Comp1></Comp1>
+        <Aleatorio min={1} max={60}/>
+        <Aleatorio min={1} max={60}/>
+        <Aleatorio min={1} max={60}/>
+        <Aleatorio min={1} max={60}/>
+       <Mensagem></Mensagem>
+        <Comp1/>
         <Comp2></Comp2>
         <CompPadrao></CompPadrao>
+        <MinMax min="3" max="20"/>
+        <MinMax min="10" max="14"/>
     </View>
 
 )
@@ -30,5 +36,6 @@ const style = StyleSheet.create({//cria uma constante do tipo style
         flexGrow: 1,//Permite que o background possa expandir
         justifyContent: 'center',
         alignItems: 'center',
+        padding: 20,
     }
 })
